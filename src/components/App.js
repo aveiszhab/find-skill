@@ -12,12 +12,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Switch>
-        <Route exact path="/" component={Skills}>
-          <Skills />
-        </Route>
-        <Route exact path="/add-skills" component={AddSkills}>
-          <AddSkills />
-        </Route>
+        <Route exact path="/" component={Skills} />
+        <Route exact path="/add-skills" component={AddSkills} />
       </Switch>
     </div>
   );
