@@ -8,7 +8,7 @@ const Skills = () => {
       name: "",
       skill: "",
       description: "",
-      address: "",
+      postcode: "",
       free: true,
       professional: false,
       email: "",
@@ -83,16 +83,16 @@ const Skills = () => {
             </label>
           </div>
 
-          <div className="add-address">
-            <label className="label" htmlFor="address">
-              Address:
+          <div className="add-postcode">
+            <label className="label" htmlFor="postcode">
+              Postcode:
               <input
                 className="input"
                 type="text"
-                placeholder="Add a address"
-                id="address"
-                name="address"
-                value={fields.address}
+                placeholder="Add a postcode"
+                id="postcode"
+                name="postcode"
+                value={fields.postcode}
                 onChange={handleFieldChange}
               />
             </label>
@@ -127,6 +127,21 @@ const Skills = () => {
                 <option value="true">Yes</option>
                 <option value="false">No</option>
               </select>
+            </label>
+          </div>
+
+          <div className="add-email">
+            <label className="label" htmlFor="email">
+              Email:
+              <input
+                className="input"
+                type="text"
+                placeholder="Add a email"
+                id="email"
+                name="email"
+                value={fields.email}
+                onChange={handleFieldChange}
+              />
             </label>
           </div>
 

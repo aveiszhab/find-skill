@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "http://localhost:4000";
+const url = "https://find-skill-api.herokuapp.com";
 
 const postSkill = (data, setAlert) => {
   return axios({
