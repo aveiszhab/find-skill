@@ -22,4 +22,15 @@ const postSkill = (data, setAlert) => {
     );
 };
 
-export { postSkill };
+const listSkills = (setSkills, setAlert) => {
+  return axios({
+    method: "get",
+    url: `${url}/users`,
+  })
+    .then(({ data }) => setSkills(data))
+    .catch(() =>
+      setAlert({ message: "Server error. Please try again later." })
+    );
+};
+
+export { postSkill, listSkills };

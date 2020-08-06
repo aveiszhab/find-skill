@@ -1,0 +1,12 @@
+.skills{
+    width: 100vw;
+    display: flex;
+}
+.skillcards {
+    width: 40vw;
+
+}
+.map {
+    width: 60vw;
+    height: 100vh;
+}
