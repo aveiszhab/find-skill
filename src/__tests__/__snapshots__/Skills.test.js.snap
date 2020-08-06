@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skills renders correctly to match the Skills snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    Skills
+  </div>
+</DocumentFragment>
+`;

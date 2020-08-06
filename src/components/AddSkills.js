@@ -44,7 +44,7 @@ const Skills = () => {
               <input
                 className="input"
                 type="text"
-                placeholder="Add a name"
+                placeholder="Add your name"
                 id="name"
                 name="name"
                 value={fields.name}
@@ -59,7 +59,7 @@ const Skills = () => {
               <input
                 className="input"
                 type="text"
-                placeholder="Add a skill"
+                placeholder="Short desrcription of your skill e.g. 'Fixing Bikes'"
                 id="skill"
                 name="skill"
                 value={fields.skill}
@@ -74,7 +74,7 @@ const Skills = () => {
               <input
                 className="input"
                 type="text"
-                placeholder="Add a description"
+                placeholder="Describe your skills with few sentences"
                 id="description"
                 name="description"
                 value={fields.description}
@@ -89,7 +89,7 @@ const Skills = () => {
               <input
                 className="input"
                 type="text"
-                placeholder="Add a postcode"
+                placeholder="Add your postcode e.g 'SK17 7DW'"
                 id="postcode"
                 name="postcode"
                 value={fields.postcode}
@@ -102,6 +102,7 @@ const Skills = () => {
             <label className="label" htmlFor="free">
               Free Service:
               <select
+                title="free"
                 className="select"
                 id="free"
                 name="free"
@@ -118,6 +119,7 @@ const Skills = () => {
             <label className="label" htmlFor="professional">
               Professional service:
               <select
+                title="professional"
                 className="select"
                 id="professional"
                 name="professional"
@@ -136,7 +138,7 @@ const Skills = () => {
               <input
                 className="input"
                 type="text"
-                placeholder="Add a email"
+                placeholder="Add your email address"
                 id="email"
                 name="email"
                 value={fields.email}

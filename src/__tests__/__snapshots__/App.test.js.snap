@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly to match the App snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div
+      class="navbar"
+    >
+      <ul
+        class="navbar-links"
+      >
+        <li
+          class="navbar-links-item"
+        >
+          <a
+            href="/"
+          >
+            View Skills
+          </a>
+        </li>
+        <li
+          class="navbar-links-item"
+        >
+          <a
+            href="/add-skills"
+          >
+            Add a Skill
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      Skills
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddProperty renders correctly matches the AddSkills snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="AddSkill"
+    >
+      <h3>
+        Add skill
+      </h3>
+      <form>
+        <div
+          class="add-name"
+        >
+          <label
+            class="label"
+            for="name"
+          >
+            Name:
+            <input
+              class="input"
+              id="name"
+              name="name"
+              placeholder="Add your name"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <div
+          class="add-skill"
+        >
+          <label
+            class="label"
+            for="skill"
+          >
+            Skill:
+            <input
+              class="input"
+              id="skill"
+              name="skill"
+              placeholder="Short desrcription of your skill e.g. 'Fixing Bikes'"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <div
+          class="add-description"
+        >
+          <label
+            class="label"
+            for="description"
+          >
+            Description:
+            <input
+              class="input"
+              id="description"
+              name="description"
+              placeholder="Describe your skills with few sentences"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <div
+          class="add-postcode"
+        >
+          <label
+            class="label"
+            for="postcode"
+          >
+            Postcode:
+            <input
+              class="input"
+              id="postcode"
+              name="postcode"
+              placeholder="Add your postcode e.g 'SK17 7DW'"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <div
+          class="free-select"
+        >
+          <label
+            class="label"
+            for="free"
+          >
+            Free Service:
+            <select
+              class="select"
+              id="free"
+              name="free"
+              title="free"
+            >
+              <option
+                value="true"
+              >
+                Yes
+              </option>
+              <option
+                value="false"
+              >
+                For fee
+              </option>
+            </select>
+          </label>
+        </div>
+        <div
+          class="professional-select"
+        >
+          <label
+            class="label"
+            for="professional"
+          >
+            Professional service:
+            <select
+              class="select"
+              id="professional"
+              name="professional"
+              title="professional"
+            >
+              <option
+                value="true"
+              >
+                Yes
+              </option>
+              <option
+                value="false"
+              >
+                No
+              </option>
+            </select>
+          </label>
+        </div>
+        <div
+          class="add-email"
+        >
+          <label
+            class="label"
+            for="email"
+          >
+            Email:
+            <input
+              class="input"
+              id="email"
+              name="email"
+              placeholder="Add your email address"
+              type="text"
+              value=""
+            />
+          </label>
+        </div>
+        <button
+          class="add-button"
+          type="submit"
+        >
+          Add
+        </button>
+      </form>
+    </div>
+  </div>
+</DocumentFragment>
+`;
