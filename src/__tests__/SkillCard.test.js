@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import SkillCard from "../components/SkillCard";
 
 describe("SkillCard", () => {
@@ -14,7 +14,9 @@ describe("SkillCard", () => {
   };
 
   const setUp = () => {
-    const { asFragment, getByText, getByTestId, getByRole } = render(<SkillCard {...props} />);
+    const { asFragment, getByText, getByTestId, getByRole } = render(
+      <SkillCard {...props} />
+    );
 
     return {
       asFragment: asFragment(),

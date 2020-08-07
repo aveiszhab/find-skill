@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Map from "./Map";
+import GoogleApiWrapper from "./Map";
 import SkillCard from "./SkillCard";
 import Alert from "./Alert";
 import { listSkills } from "../requests/requests";
@@ -25,7 +25,7 @@ const Skills = () => {
   return (
     <div className="skills">
       <div>
-        <Map className="map" />
+        <GoogleApiWrapper className="map" skills={skills} />
       </div>
       <div className="skillcards">
         <Alert message={alert.message} success={alert.isSuccess} />

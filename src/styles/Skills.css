@@ -3,10 +3,8 @@
     display: flex;
 }
 .skillcards {
-    width: 40vw;
+    width: 40%;
+    position: absolute;
+    left: 70%;
+}
 
-}
-.map {
-    width: 60vw;
-    height: 100vh;
-}

@@ -1,19 +1,43 @@
+/* eslint-disable react/forbid-prop-types */
 import React from "react";
-import GoogleMapReact from "google-map-react";
-import "../styles/Map.css";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import PropTypes from "prop-types";
 
-const Map = () => {
+const MapContainer = ({ skills }) => {
+  const initialState = {
+    centre: {
+      lat: 53.480759,
+      lng: -2.242631,
+    },
+  };
+
   return (
-    <div className="map">
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API }}
-        defaultCenter={{
-          lat: 53.480759,
-          lng: -2.242631,
-        }}
-        defaultZoom={11}
-      />
+    <div>
+      <Map
+        google={window.google}
+        classname="mapcontainer"
+        style={{ height: "100%", position: "relative", width: "70%" }}
+        zoom={8}
+        initialCenter={initialState.centre}
+      >
+        {skills.map((marker) => {
+          return (
+            <Marker
+              key={marker._id}
+              name={marker.name}
+              position={{ lat: marker.lat, lng: marker.long }}
+            />
+          );
+        })}
+      </Map>
     </div>
   );
 };
-export default Map;
+
+MapContainer.propTypes = {
+  skills: PropTypes.array.isRequired,
+};
+
+export default GoogleApiWrapper({
+  apiKey: process.env.REACT_APP_GOOGLE_API,
+})(MapContainer);
