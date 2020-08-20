@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddProperty renders correctly matches the AddSkills snapshot 1`] = `
+exports[`AddSkill renders correctly matches the AddSkills snapshot 1`] = `
 <DocumentFragment>
   <div>
     <div

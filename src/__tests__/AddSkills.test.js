@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import AddSkills from "../components/AddSkills";
 
-describe("AddProperty", () => {
+describe("AddSkill", () => {
   const setUp = () => {
     const { asFragment, getByRole } = render(<AddSkills />);
 

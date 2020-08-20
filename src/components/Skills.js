@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import GoogleApiWrapper from "./Map";
-import SkillCard from "./SkillCard";
-import Alert from "./Alert";
 import { listSkills } from "../requests/requests";
 import "../styles/Skills.css";
 
@@ -15,23 +13,15 @@ const Skills = () => {
   };
 
   const [skills, setSkills] = useState(initialState.skills);
-  const [alert, setAlert] = useState(initialState.alert);
 
   useEffect(() => {
-    setAlert({ message: "", isSuccess: false });
-    listSkills(setSkills, setAlert);
+    listSkills(setSkills);
   }, []);
 
   return (
     <div className="skills">
       <div>
         <GoogleApiWrapper className="map" skills={skills} />
-      </div>
-      <div className="skillcards">
-        <Alert message={alert.message} success={alert.isSuccess} />
-        {skills.map((skill) => (
-          <SkillCard key={skill._id} {...skill} />
-        ))}
       </div>
     </div>
   );
