@@ -1,10 +1,19 @@
 .skills{
     width: 100vw;
-    display: flex;
-}
-.skillcards {
-    width: 40%;
-    position: absolute;
-    left: 70%;
+    height: 90vh;
 }
 
+.map{
+    position: absolute;
+    width: 68vw;
+    height: 90vh;
+}
+.skillcard-container {
+    width: 28vw;
+    position: absolute;
+    left: 70%;
+    height: 35%;
+    background-color: chartreuse;
+    border: solid 1px rgb(5, 107, 5);
+    margin: 0.5%
+}

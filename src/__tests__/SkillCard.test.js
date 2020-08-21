@@ -2,20 +2,20 @@ import React from "react";
 import { render } from "@testing-library/react";
 import SkillCard from "../components/SkillCard";
 
-describe("SkillCard", () => {
-  const props = {
-    name: "Test_Name",
-    skill: "Test_Skill",
-    description: "Test_Description",
-    postcode: "Test_Postcode",
-    free: false,
-    professional: true,
-    email: "j.d.Smith@gmail.com",
-  };
+const mockSkills = {
+  name: "Test_Name",
+  skill: "Test_Skill",
+  description: "Test_Description",
+  postcode: "Test_Postcode",
+  free: false,
+  professional: true,
+  email: "j.d.Smith@gmail.com",
+};
 
+describe("SkillCard", () => {
   const setUp = () => {
     const { asFragment, getByText, getByTestId, getByRole } = render(
-      <SkillCard {...props} />
+      <SkillCard skill={mockSkills} />
     );
 
     return {

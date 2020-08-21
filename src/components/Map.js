@@ -1,85 +1,40 @@
 /* eslint-disable react/forbid-prop-types */
-import React, { useState } from "react";
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
-import PropTypes from "prop-types";
+import React, { useEffect, useRef, useState } from "react";
+import PropTypes, { array } from "prop-types";
 
-const MapContainer = ({ skills }) => {
-  const initialState = {
-    centre: {
-      lat: 53.480759,
-      lng: -2.242631,
-    },
-    activeMarker: {},
-    showingInfoWindow: false,
-    selectedPlace: {},
-  };
+export default function Map({ options, className, onMount, onMountProps }) {
+  const ref = useRef();
+  const [map, setMap] = useState();
 
-  const [activeMarker, setActiveMarker] = useState(initialState.activeMarker);
-  const [showingInfoWindow, setShowingInfoWindow] = useState(
-    initialState.showingInfoWindow
-  );
-  const [selectedPlace, setSelectedPlace] = useState(
-    initialState.selectedPlace
-  );
+  // eslint-disable-next-line consistent-return
+  useEffect(() => {
+    const onLoad = () =>
+      setMap(new window.google.maps.Map(ref.current, options));
+    if (!window.google) {
+      const script = document.createElement(`script`);
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API}`;
+      document.head.append(script);
+      script.addEventListener(`load`, onLoad);
+      return () => script.removeEventListener(`load`, onLoad);
+    }
+    onLoad();
+  }, [options]);
+  if (map && typeof onMount === `function`) onMount(map, onMountProps);
 
-  const onMarkerClick = (props, marker) => {
-    setActiveMarker(marker);
-    setSelectedPlace(props);
-    setShowingInfoWindow(true);
-  };
+  return <div {...{ ref, className }} />;
+}
 
-  const onInfoWindowClose = () => {
-    setActiveMarker(null);
-    setShowingInfoWindow(false);
-  };
-
-  return (
-    <div>
-      <Map
-        google={window.google}
-        classname="mapcontainer"
-        style={{ height: "100%", position: "relative", width: "70%" }}
-        zoom={8}
-        initialCenter={initialState.centre}
-      >
-        {skills.map((marker) => {
-          return (
-            <Marker
-              key={marker._id}
-              name={marker.name}
-              skill={marker.skill}
-              description={marker.description}
-              free={marker.free}
-              professional={marker.professional}
-              position={{ lat: marker.lat, lng: marker.long }}
-              onClick={onMarkerClick}
-            />
-          );
-        })}
-        <InfoWindow
-          marker={activeMarker}
-          onClose={onInfoWindowClose}
-          visible={showingInfoWindow}
-        >
-          <div className="infowindow">
-            <h3>{selectedPlace.name}</h3>
-            <h3>{selectedPlace.skill}</h3>
-            <h5>{selectedPlace.description}</h5>
-            <p>{selectedPlace.free ? "Free" : "For charge"}</p>
-            <p>
-              {selectedPlace.professional ? "Professional" : "Non-professional"}
-            </p>
-          </div>
-        </InfoWindow>
-      </Map>
-    </div>
-  );
+Map.defaultProps = {
+  options: {
+    center: { lat: 53.480759, lng: -2.242631 },
+    zoom: 8,
+  },
 };
 
-MapContainer.propTypes = {
-  skills: PropTypes.array.isRequired,
+Map.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  options: PropTypes.object,
+  className: PropTypes.string.isRequired,
+  onMount: PropTypes.func.isRequired,
+  onMountProps: array.isRequired,
 };
-
-export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_GOOGLE_API,
-})(MapContainer);

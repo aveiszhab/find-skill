@@ -2,8 +2,6 @@
 
 exports[`Map renders correctly to match the Skills snapshot 1`] = `
 <DocumentFragment>
-  <div>
-    Loading...
-  </div>
+  <div />
 </DocumentFragment>
 `;

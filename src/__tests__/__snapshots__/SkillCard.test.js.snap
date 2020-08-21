@@ -38,7 +38,7 @@ exports[`SkillCard to match the SkillCard snapshot 1`] = `
       Professional: Yes
     </div>
     <div
-      class="skillcard email"
+      class="skillcard-email"
     >
       <a
         href="mailto:j.d.Smith@gmail.com"
@@ -60,7 +60,6 @@ exports[`SkillCard to match the SkillCard snapshot 1`] = `
           />
         </svg>
       </a>
-      Email
     </div>
   </div>
 </DocumentFragment>

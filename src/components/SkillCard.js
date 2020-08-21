@@ -4,45 +4,35 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "../styles/SkillCard.css";
 
-const SkillCard = ({
-  name,
-  skill,
-  description,
-  postcode,
-  free,
-  professional,
-  email,
-}) => {
+const SkillCard = ({ skill }) => {
   return (
     <div className="skillcard">
-      <div className=" skillcard-name">{name}</div>
-      <div className=" skillcard-skill">{skill}</div>
-      <div className=" skillcard-description">{description}</div>
-      <div className=" skillcard-postcode">{postcode}</div>
+      <div className=" skillcard-name">{skill.name}</div>
+      <div className=" skillcard-skill">{skill.skill}</div>
+      <div className=" skillcard-description">{skill.description}</div>
+      <div className=" skillcard-postcode">{skill.postcode}</div>
       <div className=" skillcard-free" data-testid="free">
-        {`Free: ${free ? "Yes" : "No"}`}
+        {skill.name ? `Free: ${skill.free ? "Yes" : "No"}` : null}
       </div>
       <div className=" skillcard-professional" data-testid="professional">
-        {`Professional: ${professional ? "Yes" : "No"}`}
+        {skill.name
+          ? `Professional: ${skill.professional ? "Yes" : "No"}`
+          : null}
       </div>
-      <div className="skillcard email">
-        <a href={`mailto:${email}`}>
-          <FontAwesomeIcon id="iconId" icon={faEnvelope} />
-        </a>
-        Email
+      <div className="skillcard-email">
+        {skill.name && (
+          <a href={`mailto:${skill.email}`}>
+            <FontAwesomeIcon id="iconId" icon={faEnvelope} />
+          </a>
+        )}
       </div>
     </div>
   );
 };
 
 SkillCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  skill: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  postcode: PropTypes.string.isRequired,
-  free: PropTypes.bool.isRequired,
-  professional: PropTypes.bool.isRequired,
-  email: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  skill: PropTypes.object.isRequired,
 };
 
 export default SkillCard;
