@@ -8,16 +8,20 @@ const Map = ({ options, className, onMount, onMountProps }) => {
 
   // eslint-disable-next-line consistent-return
   useEffect(() => {
-    const onLoad = () =>
+    const onScriptLoad = () => {
       setMap(new window.google.maps.Map(ref.current, options));
+    };
     if (!window.google) {
       const script = document.createElement(`script`);
       script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API}`;
       document.head.append(script);
-      script.addEventListener(`load`, onLoad);
-      return () => script.removeEventListener(`load`, onLoad);
+
+      script.addEventListener("load", () => {
+        onScriptLoad();
+      });
+    } else {
+      onScriptLoad();
     }
-    onLoad();
   }, [options]);
   if (map && typeof onMount === `function`) onMount(map, onMountProps);
 
@@ -39,4 +43,13 @@ Map.propTypes = {
   onMountProps: array.isRequired,
 };
 
-export default Map;
+function shouldNotUpdate(prevOptions, nextOptions) {
+  return (
+    prevOptions.options.center.lat === nextOptions.options.center.lat &&
+    prevOptions.options.center.lng === nextOptions.options.center.lng &&
+    prevOptions.options.zoom === nextOptions.options.zoom &&
+    prevOptions.onMountProps === nextOptions.onMountProps
+  );
+}
+
+export default React.memo(Map, shouldNotUpdate);

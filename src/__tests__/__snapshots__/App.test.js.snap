@@ -8,6 +8,14 @@ exports[`App renders correctly to match the App snapshot 1`] = `
     <div
       class="navbar"
     >
+      <img
+        alt="logo"
+        class="navbar-logo"
+        src="MyLogo.png"
+      />
+      <h2>
+        FindSkill
+      </h2>
       <ul
         class="navbar-links"
       >
@@ -34,13 +42,88 @@ exports[`App renders correctly to match the App snapshot 1`] = `
     <div
       class="skills"
     >
-      <div>
-        <div
-          class="map"
-        />
+      <div
+        class="map"
+      />
+      <div
+        class="sidebar"
+      >
+        <div>
+          <div
+            class="search-form"
+          >
+            <input
+              placeholder="Enter your location"
+              type="text"
+              value=""
+            />
+            <button
+              type="submit"
+            >
+              Search
+            </button>
+          </div>
+        </div>
         <div
           class="skillcard-container"
-        />
+        >
+          <p
+            class="infotext"
+          >
+            Please click on markers to see the deatils
+          </p>
+        </div>
+        <div
+          class="legend-container"
+        >
+          <div
+            class="legend"
+          >
+            <h4>
+              Legend
+            </h4>
+            <div>
+              <img
+                alt="green"
+                class="icon"
+                src="http://labs.google.com/ridefinder/images/mm_20_green.png"
+              />
+              <span>
+                Free / Non-Professional service
+              </span>
+            </div>
+            <div>
+              <img
+                alt="green"
+                class="icon"
+                src="http://labs.google.com/ridefinder/images/mm_20_yellow.png"
+              />
+              <span>
+                Free / Professional service
+              </span>
+            </div>
+            <div>
+              <img
+                alt="green"
+                class="icon"
+                src="http://labs.google.com/ridefinder/images/mm_20_purple.png"
+              />
+              <span>
+                For charge / Professional service
+              </span>
+            </div>
+            <div>
+              <img
+                alt="green"
+                class="icon"
+                src="http://labs.google.com/ridefinder/images/mm_20_red.png"
+              />
+              <span>
+                For charge / Non-Professional service
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
