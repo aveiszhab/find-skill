@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes, { array } from "prop-types";
 
-export default function Map({ options, className, onMount, onMountProps }) {
+const Map = ({ options, className, onMount, onMountProps }) => {
   const ref = useRef();
   const [map, setMap] = useState();
 
@@ -22,7 +22,7 @@ export default function Map({ options, className, onMount, onMountProps }) {
   if (map && typeof onMount === `function`) onMount(map, onMountProps);
 
   return <div {...{ ref, className }} />;
-}
+};
 
 Map.defaultProps = {
   options: {
@@ -38,3 +38,5 @@ Map.propTypes = {
   onMount: PropTypes.func.isRequired,
   onMountProps: array.isRequired,
 };
+
+export default Map;

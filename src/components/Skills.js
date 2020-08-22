@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Map from "./Map";
 import SkillCard from "./SkillCard";
 import Legend from "./Legend";
+import SearchForm from "./SearchForm";
 import { listSkills } from "../requests/requests";
 import "../styles/Skills.css";
 
@@ -25,6 +26,14 @@ const Skills = () => {
   // Google Map
   const [activeMarkerId, setActivemarkerId] = useState();
   const selectedSkill = skills.find((skill) => skill._id === activeMarkerId);
+  const [searchLocation, setSearchLocation] = useState({
+    lat: 53.480759,
+    lng: -2.242631,
+  });
+
+  const handleSearchLocation = (latLng) => {
+    setSearchLocation(latLng);
+  };
 
   const addMarkers = (map, skillsArray) => {
     skillsArray.forEach((skill) => {
@@ -73,8 +82,19 @@ const Skills = () => {
 
   return (
     <div className="skills">
-      <Map className="map" onMount={addMarkers} onMountProps={skills} />
+      <Map
+        className="map"
+        onMount={addMarkers}
+        onMountProps={skills}
+        options={{ center: searchLocation, zoom: 10 }}
+      />
       <div className="sidebar">
+        <div>
+          <SearchForm
+            className="searchform-container"
+            onClick={handleSearchLocation}
+          />
+        </div>
         <div className="skillcard-container">
           <p className="infotext">Please click on markers to see the deatils</p>
           {selectedSkill && <SkillCard skill={selectedSkill} />}
