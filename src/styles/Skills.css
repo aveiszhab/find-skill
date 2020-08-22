@@ -1,19 +1,41 @@
 .skills{
     width: 100vw;
-    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .map{
     position: absolute;
-    width: 68vw;
-    height: 90vh;
+    width: 70vw;
+    height: 89vh;
+}
+
+.sidebar {
+    width: 27.5vw;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    left: 72%;
+    height:89vh;
 }
 .skillcard-container {
-    width: 28vw;
-    position: absolute;
-    left: 70%;
-    height: 35%;
-    background-color: chartreuse;
     border: solid 1px rgb(5, 107, 5);
-    margin: 0.5%
+    margin: 2px;
+    padding:2px;
+    overflow: scroll;
+    align-content: center;
+    height: 36vh;
+}
+.legend-container {
+    display: flex;
+    border: solid 1px rgb(5, 107, 5);
+    margin: 2px;
+    padding:2px;
+    overflow: scroll;
+}
+
+.infotext {
+    font-size: 2.5vh;
+    padding-left: 1vw;
+    margin: 0px;
 }

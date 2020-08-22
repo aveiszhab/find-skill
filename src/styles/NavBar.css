@@ -1,17 +1,44 @@
 .navbar{
+    display:flex;
+    flex-wrap: wrap;
     background-color: white;
     border-bottom: 1px solid grey;
-    height: 8vh;
+    height: 10vh;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 900;
+}
+
+.navbar-logo{
+    width: 4%;  
+    height: 70%;  
+    margin-right: 2%;
 }
 
 .navbar-links{
+    flex-basis: calc(75% - 1rem);
+    justify-content: flex-end;
+    display: flex;
+    flex-wrap: nowrap;
     margin: 0;
     padding: 0;
     float: right;
 }
 
 .navbar-links-item{
+    font-weight: 700;
     margin: 0;
     padding: 25px;
     display: inline-block;
 } 
+
+.navbar-links-item :hover {
+    color: rgb(18, 122, 18)
+}
+
+.navbar-links-item > * {
+    text-decoration: none;
+    color: black;
+}

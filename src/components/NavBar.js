@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/NavBar.css";
+import MyLogo from "../MyLogo.png";
 
 const NavBar = () => {
   return (
     <div className="navbar">
+      <img className="navbar-logo" src={MyLogo} alt="logo" />
+      <h2>FindSkill</h2>
       <ul className="navbar-links">
         <li className="navbar-links-item">
           <Link to="/">View Skills</Link>

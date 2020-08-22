@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Map from "./Map";
 import SkillCard from "./SkillCard";
+import Legend from "./Legend";
 import { listSkills } from "../requests/requests";
 import "../styles/Skills.css";
 
@@ -63,15 +64,24 @@ const Skills = () => {
       infoWindow.addListener("closeclick", () => {
         setActivemarkerId("");
       });
+
+      map.addListener("click", () => {
+        if (infoWindow) infoWindow.close();
+      });
     });
   };
 
   return (
     <div className="skills">
-      <div>
-        <Map className="map" onMount={addMarkers} onMountProps={skills} />
-        <div className="skillcard-container" />
-        {selectedSkill && <SkillCard skill={selectedSkill} />}
+      <Map className="map" onMount={addMarkers} onMountProps={skills} />
+      <div className="sidebar">
+        <div className="skillcard-container">
+          <p className="infotext">Please click on markers to see the deatils</p>
+          {selectedSkill && <SkillCard skill={selectedSkill} />}
+        </div>
+        <div className="legend-container">
+          <Legend />
+        </div>
       </div>
     </div>
   );

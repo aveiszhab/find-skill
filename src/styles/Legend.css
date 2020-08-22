@@ -1,0 +1,16 @@
+.legend {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5vh;
+    width: 25vw;
+    padding-left: 1vh
+}
+
+h4 {
+    margin-top: 0vh;
+    margin-bottom: 1vh;
+    margin-left: 1vh;
+}
+.icon {
+    margin: 0px 4px;
+}

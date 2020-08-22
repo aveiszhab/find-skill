@@ -1,15 +1,57 @@
 .skillcard{
-  
     display: flex;
     flex-direction: column;
     padding: 1%;
     margin: 0.5%;
-    
     flex:1 1 30%;
     justify-content: space-around;
-    width: 25vw;
-    position: absolute;
-    left: 70%;
-    height: 30%;
     
+}
+
+.skillcard-skill {
+    padding: 1vh;
+    font-size: 3vh;
+    font-weight: bold;
+    background-color: rgb(4, 59, 4);  
+    color: ivory
+}
+
+.skillcard-description {
+    margin-top: 1vh;
+    font-size: 2vh;;  
+}
+
+.skillcard-name {
+    margin-top: 1vh;
+    font-size: 2vh;
+    font-weight: bold;  
+}
+
+.skillcard-postcode {
+    font-size: 2vh;
+    font-weight: bold;  
+}
+
+.skillcard-free {
+    margin-top: 1vh;
+    font-size: 2vh;
+    font-style: italic;  
+}
+
+.skillcard-professional {
+    font-size: 2vh;
+    font-style: italic;  
+}
+
+
+.skillcard-email {
+    margin-top: 1vh;
+    font-size: 2vh;
+    background-color: rgb(4, 59, 4); 
+    padding: 1vh;
+    color: ivory;
+}
+
+#iconId{
+    color: chartreuse;  
 }
