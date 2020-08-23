@@ -2,30 +2,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes, { array } from "prop-types";
 
-const Map = ({ options, className, onMount, onMountProps }) => {
+const Map = ({ options, className, title, onMount, onMountProps }) => {
   const ref = useRef();
   const [map, setMap] = useState();
 
-  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const onScriptLoad = () => {
       setMap(new window.google.maps.Map(ref.current, options));
     };
-    if (!window.google) {
-      const script = document.createElement(`script`);
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API}`;
-      document.head.append(script);
-
-      script.addEventListener("load", () => {
-        onScriptLoad();
-      });
-    } else {
-      onScriptLoad();
-    }
+    onScriptLoad();
   }, [options]);
   if (map && typeof onMount === `function`) onMount(map, onMountProps);
 
-  return <div {...{ ref, className }} />;
+  return <div {...{ ref, className, title }} />;
 };
 
 Map.defaultProps = {
@@ -36,9 +25,9 @@ Map.defaultProps = {
 };
 
 Map.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   options: PropTypes.object,
   className: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   onMount: PropTypes.func.isRequired,
   onMountProps: array.isRequired,
 };

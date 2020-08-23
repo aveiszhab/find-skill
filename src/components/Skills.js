@@ -31,6 +31,8 @@ const Skills = () => {
     lng: -2.242631,
   });
 
+  console.log(searchLocation);
+
   const handleSearchLocation = (latLng) => {
     setSearchLocation(latLng);
   };
@@ -80,20 +82,45 @@ const Skills = () => {
     });
   };
 
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const buildScript = () => {
+      if (!window.google) {
+        const script = document.createElement(`script`);
+        script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_API}&libraries=places`;
+        document.head.append(script);
+
+        script.addEventListener("load", () => {
+          setIsScriptLoaded(true);
+        });
+      } else {
+        setIsScriptLoaded(true);
+      }
+    };
+    buildScript();
+  }, []);
+
   return (
     <div className="skills">
-      <Map
-        className="map"
-        onMount={addMarkers}
-        onMountProps={skills}
-        options={{ center: searchLocation, zoom: 10 }}
-      />
+      {isScriptLoaded && (
+        <Map
+          className="map"
+          title="map"
+          onMount={addMarkers}
+          onMountProps={skills}
+          options={{ center: searchLocation, zoom: 10 }}
+        />
+      )}
       <div className="sidebar">
-        <div>
-          <SearchForm
-            className="searchform-container"
-            onClick={handleSearchLocation}
-          />
+        <div className="searchform-container">
+          {isScriptLoaded && (
+            <SearchForm
+              className="searchform"
+              title="searchform"
+              onClick={handleSearchLocation}
+            />
+          )}
         </div>
         <div className="skillcard-container">
           <p className="infotext">Please click on markers to see the deatils</p>

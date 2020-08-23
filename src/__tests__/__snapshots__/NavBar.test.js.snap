@@ -5,6 +5,14 @@ exports[`NavBar renders correctly to match the NavBar snapshot 1`] = `
   <div
     class="navbar"
   >
+    <img
+      alt="logo"
+      class="navbar-logo"
+      src="MyLogo.png"
+    />
+    <h2>
+      FindSkill
+    </h2>
     <ul
       class="navbar-links"
     >

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Legend to match the Legend snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="legend"
+  >
+    <h4>
+      Legend
+    </h4>
+    <div>
+      <img
+        alt="green"
+        class="icon"
+        src="http://labs.google.com/ridefinder/images/mm_20_green.png"
+      />
+      <span>
+        Free / Non-Professional service
+      </span>
+    </div>
+    <div>
+      <img
+        alt="yellow"
+        class="icon"
+        src="http://labs.google.com/ridefinder/images/mm_20_yellow.png"
+      />
+      <span>
+        Free / Professional service
+      </span>
+    </div>
+    <div>
+      <img
+        alt="purple"
+        class="icon"
+        src="http://labs.google.com/ridefinder/images/mm_20_purple.png"
+      />
+      <span>
+        For charge / Professional service
+      </span>
+    </div>
+    <div>
+      <img
+        alt="red"
+        class="icon"
+        src="http://labs.google.com/ridefinder/images/mm_20_red.png"
+      />
+      <span>
+        For charge / Non-Professional service
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

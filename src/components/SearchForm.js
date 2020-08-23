@@ -1,29 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 
-const SearchForm = (props) => {
-  const [searchText, setSearchtext] = useState("");
+let autoComplete;
 
-  const handleInputChange = (e) => {
-    setSearchtext(e.target.value);
-  };
+const SearchForm = ({ className, title, onClick }) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    const onScriptLoad = (input) => {
+      autoComplete = new window.google.maps.places.Autocomplete(
+        ref.current,
+        input
+      );
+      autoComplete.setComponentRestrictions({
+        country: "gb",
+      });
+      autoComplete.setTypes(["(cities)"]);
+
+      autoComplete.setFields(["geometry"]);
+      autoComplete.addListener("place_changed", () => {
+        const place = autoComplete.getPlace();
+
+        const latititude = place.geometry.location.lat();
+        const longitude = place.geometry.location.lng();
+        const latLng = { lat: latititude, lng: longitude };
+
+        onClick(latLng);
+      });
+    };
+
+    onScriptLoad();
+  }, [onClick]);
 
   return (
-    <div className="search-form">
-      <input
-        type="text"
-        value={searchText}
-        onChange={handleInputChange}
-        placeholder="Enter your location"
-      />
-      <button type="submit" onClick={() => props.onClick(searchText)}>
-        Search
-      </button>
-    </div>
+    <input
+      ref={ref}
+      placeholder="Enter a City"
+      title={title}
+      className={className}
+    />
   );
 };
 
 SearchForm.propTypes = {
+  className: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Map renders correctly to match the Skills snapshot 1`] = `
+exports[`Map renders correctly to match the Map snapshot 1`] = `
 <DocumentFragment>
-  <div />
+  <div
+    class="map"
+    title="map"
+  />
 </DocumentFragment>
 `;

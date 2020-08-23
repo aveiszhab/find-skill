@@ -6,11 +6,6 @@ exports[`SkillCard to match the SkillCard snapshot 1`] = `
     class="skillcard"
   >
     <div
-      class=" skillcard-name"
-    >
-      Test_Name
-    </div>
-    <div
       class=" skillcard-skill"
     >
       Test_Skill
@@ -19,6 +14,11 @@ exports[`SkillCard to match the SkillCard snapshot 1`] = `
       class=" skillcard-description"
     >
       Test_Description
+    </div>
+    <div
+      class=" skillcard-name"
+    >
+      Name:Test_Name
     </div>
     <div
       class=" skillcard-postcode"
@@ -60,6 +60,7 @@ exports[`SkillCard to match the SkillCard snapshot 1`] = `
           />
         </svg>
       </a>
+      Email
     </div>
   </div>
 </DocumentFragment>

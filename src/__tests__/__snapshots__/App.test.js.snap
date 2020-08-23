@@ -43,27 +43,11 @@ exports[`App renders correctly to match the App snapshot 1`] = `
       class="skills"
     >
       <div
-        class="map"
-      />
-      <div
         class="sidebar"
       >
-        <div>
-          <div
-            class="search-form"
-          >
-            <input
-              placeholder="Enter your location"
-              type="text"
-              value=""
-            />
-            <button
-              type="submit"
-            >
-              Search
-            </button>
-          </div>
-        </div>
+        <div
+          class="searchform-container"
+        />
         <div
           class="skillcard-container"
         >
@@ -94,7 +78,7 @@ exports[`App renders correctly to match the App snapshot 1`] = `
             </div>
             <div>
               <img
-                alt="green"
+                alt="yellow"
                 class="icon"
                 src="http://labs.google.com/ridefinder/images/mm_20_yellow.png"
               />
@@ -104,7 +88,7 @@ exports[`App renders correctly to match the App snapshot 1`] = `
             </div>
             <div>
               <img
-                alt="green"
+                alt="purple"
                 class="icon"
                 src="http://labs.google.com/ridefinder/images/mm_20_purple.png"
               />
@@ -114,7 +98,7 @@ exports[`App renders correctly to match the App snapshot 1`] = `
             </div>
             <div>
               <img
-                alt="green"
+                alt="red"
                 class="icon"
                 src="http://labs.google.com/ridefinder/images/mm_20_red.png"
               />

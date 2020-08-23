@@ -17,7 +17,7 @@ const Legend = () => {
         <img
           className="icon"
           src="http://labs.google.com/ridefinder/images/mm_20_yellow.png"
-          alt="green"
+          alt="yellow"
         />
         <span>Free / Professional service</span>
       </div>
@@ -25,7 +25,7 @@ const Legend = () => {
         <img
           className="icon"
           src="http://labs.google.com/ridefinder/images/mm_20_purple.png"
-          alt="green"
+          alt="purple"
         />
         <span>For charge / Professional service</span>
       </div>
@@ -33,7 +33,7 @@ const Legend = () => {
         <img
           className="icon"
           src="http://labs.google.com/ridefinder/images/mm_20_red.png"
-          alt="green"
+          alt="red"
         />
         <span>For charge / Non-Professional service</span>
       </div>
