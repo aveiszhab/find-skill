@@ -2,10 +2,69 @@
 
 exports[`SearchForm renders correctly to match the SearchForm snapshot 1`] = `
 <DocumentFragment>
-  <input
-    class="searchform"
-    placeholder="Enter a City"
-    title="searchform"
-  />
+  <div>
+    <p
+      class="infotext"
+    >
+      Pick a town for nearby services
+    </p>
+    <input
+      class="searchform"
+      placeholder="Enter a City"
+      title="searchform"
+    />
+    <p
+      class="infotext"
+    >
+      Pick the search radius
+    </p>
+    <form
+      class="radius-container"
+    >
+      <label
+        class="radio"
+        for="8"
+      >
+        Large
+        <input
+          checked=""
+          id="8"
+          type="radio"
+          value="8"
+        />
+        <span
+          class="checkmark"
+        />
+      </label>
+      <label
+        class="radio"
+        for="9"
+      >
+        Medium
+        <input
+          id="9"
+          type="radio"
+          value="9"
+        />
+        <span
+          class="checkmark"
+        />
+      </label>
+      <label
+        class="radio"
+        for="12"
+      >
+        Small
+        <input
+          id="12"
+          type="radio"
+          value="12"
+        />
+        <span
+          class="checkmark"
+        />
+      </label>
+    </form>
+  </div>
 </DocumentFragment>
 `;

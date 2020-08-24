@@ -1,0 +1,63 @@
+input {
+    margin-left: 1vw;
+    width: 23vw;
+}
+.radius-container {
+    display: flex;
+
+}
+
+.radio {
+    display: block;
+    position: relative;
+    padding-left: 2vw;
+    margin-left: 1vw;
+    margin-bottom: 1vh;
+    cursor: pointer;
+    font-size: 2vh;
+}
+  
+
+.radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2vh;
+    width: 2vh;
+    background-color: #eee;
+    border-radius: 50%;
+    border: solid 1px rgb(5, 107, 5);
+}
+
+.radio input:checked ~ .checkmark {
+    background-color: rgb(5, 107, 5);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.radio .checkmark:after {
+    top: 3px;
+    left: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+}
+  

@@ -25,16 +25,20 @@ const Skills = () => {
 
   // Google Map
   const [activeMarkerId, setActivemarkerId] = useState();
+  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
+  const [selectedZoom, setSelectedZoom] = useState(6);
   const selectedSkill = skills.find((skill) => skill._id === activeMarkerId);
   const [searchLocation, setSearchLocation] = useState({
     lat: 53.480759,
     lng: -2.242631,
   });
 
-  console.log(searchLocation);
-
   const handleSearchLocation = (latLng) => {
     setSearchLocation(latLng);
+  };
+
+  const handleSelectedZoom = (dist) => {
+    setSelectedZoom(dist);
   };
 
   const addMarkers = (map, skillsArray) => {
@@ -82,8 +86,6 @@ const Skills = () => {
     });
   };
 
-  const [isScriptLoaded, setIsScriptLoaded] = useState(false);
-
   useEffect(() => {
     const buildScript = () => {
       if (!window.google) {
@@ -109,7 +111,7 @@ const Skills = () => {
           title="map"
           onMount={addMarkers}
           onMountProps={skills}
-          options={{ center: searchLocation, zoom: 10 }}
+          options={{ center: searchLocation, zoom: selectedZoom }}
         />
       )}
       <div className="sidebar">
@@ -118,12 +120,13 @@ const Skills = () => {
             <SearchForm
               className="searchform"
               title="searchform"
-              onClick={handleSearchLocation}
+              onFill={handleSearchLocation}
+              onPick={handleSelectedZoom}
             />
           )}
         </div>
         <div className="skillcard-container">
-          <p className="infotext">Please click on markers to see the deatils</p>
+          <p className="infotext">Click on markers to see the details</p>
           {selectedSkill && <SkillCard skill={selectedSkill} />}
         </div>
         <div className="legend-container">

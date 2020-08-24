@@ -17,7 +17,7 @@ exports[`Skills renders correctly to match the Skills snapshot 1`] = `
         <p
           class="infotext"
         >
-          Please click on markers to see the deatils
+          Click on markers to see the details
         </p>
       </div>
       <div

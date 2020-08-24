@@ -33,6 +33,12 @@
     padding:2px;
     overflow: scroll;
 }
+.searchform-container {
+    display: flex;
+    border: solid 1px rgb(5, 107, 5);
+    margin: 2px;
+    padding:2px;
+}
 
 .infotext {
     font-size: 2.5vh;
