@@ -12,6 +12,22 @@ exports[`Skills renders correctly to match the Skills snapshot 1`] = `
         class="searchform-container"
       />
       <div
+        class="filterform-container"
+      >
+        <div>
+          <a
+            href="/?free=true"
+          >
+            Free
+          </a>
+          <a
+            href="/?free=false"
+          >
+            For charge
+          </a>
+        </div>
+      </div>
+      <div
         class="skillcard-container"
       >
         <p

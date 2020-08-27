@@ -33,4 +33,15 @@ const listSkills = (setSkills, setAlert) => {
     );
 };
 
-export { postSkill, listSkills };
+const filterSkills = (search, setSkills, setAlert) => {
+  return axios({
+    method: "get",
+    url: `${url}/users${search}`,
+  })
+    .then(({ data }) => setSkills(data))
+    .catch(() =>
+      setAlert({ message: "Server error. Please try again later." })
+    );
+};
+
+export { postSkill, listSkills, filterSkills };

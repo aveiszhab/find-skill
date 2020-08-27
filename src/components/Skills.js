@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Map from "./Map";
 import SkillCard from "./SkillCard";
 import Legend from "./Legend";
 import SearchForm from "./SearchForm";
-import { listSkills } from "../requests/requests";
+import FilterForm from "./FilterForm";
+import { listSkills, filterSkills } from "../requests/requests";
 import "../styles/Skills.css";
 
 const Skills = () => {
@@ -18,10 +20,17 @@ const Skills = () => {
 
   // Get data from API
   const [skills, setSkills] = useState(initialState.skills);
-
   useEffect(() => {
     listSkills(setSkills);
   }, []);
+
+  // Get filtered data from API
+
+  const { search } = useLocation();
+
+  useEffect(() => {
+    filterSkills(search, setSkills);
+  }, [search]);
 
   // Google Map
   const [activeMarkerId, setActivemarkerId] = useState();
@@ -125,6 +134,10 @@ const Skills = () => {
             />
           )}
         </div>
+        <div className="filterform-container">
+          <FilterForm />
+        </div>
+
         <div className="skillcard-container">
           <p className="infotext">Click on markers to see the details</p>
           {selectedSkill && <SkillCard skill={selectedSkill} />}
