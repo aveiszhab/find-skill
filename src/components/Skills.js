@@ -20,6 +20,8 @@ const Skills = () => {
 
   // Get data from API
   const [skills, setSkills] = useState(initialState.skills);
+  console.log(skills.length);
+
   useEffect(() => {
     listSkills(setSkills);
   }, []);
