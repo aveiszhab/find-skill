@@ -1,63 +1,58 @@
+.searchform-container {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px rgb(5, 107, 5);
+    padding:2px;
+}
 input {
-    margin-left: 1vw;
-    width: 23vw;
+    margin: 0vw 1vw;
+    border-radius: 4px;
+    padding: 3px;
+    margin-bottom: 1.5vh;
 }
 .radius-container {
     display: flex;
-
+    justify-content: space-evenly;
 }
-
 .radio {
-    display: block;
-    position: relative;
-    padding-left: 2vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-left: 1vw;
-    margin-bottom: 1vh;
     cursor: pointer;
     font-size: 2vh;
+    align-items: center;
 }
-  
-
 .radio input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  
+   cursor: pointer;
+    height: 3vh;
+    width: 3vh;
 }
-
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 2vh;
-    width: 2vh;
-    background-color: #eee;
-    border-radius: 50%;
-    border: solid 1px rgb(5, 107, 5);
-}
-
 .radio input:checked ~ .checkmark {
     background-color: rgb(5, 107, 5);
 }
-
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-.radio input:checked ~ .checkmark:after {
+.radio input:checked {
     display: block;
 }
-
-.radio .checkmark:after {
+.radio:after {
     top: 3px;
     left: 3px;
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: white;
+    color: lawngreen;
 }
-  
+@media only screen and (max-width: 732px) {
+    .searchform-container {
+        width: 48%;
+    }
+    input {
+        padding: 7px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .searchform-container {
+        width: 98%;
+    }
+}

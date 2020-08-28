@@ -37,7 +37,7 @@ const FilterForm = () => {
   };
 
   return (
-    <div>
+    <div className="filterform-container">
       <h4>Search by Skill</h4>
       <form className="search-skill" onSubmit={handleSearch}>
         <input
@@ -51,9 +51,14 @@ const FilterForm = () => {
           <FontAwesomeIcon icon={faSearch} />
         </button>
       </form>
-      <Link to={buildQueryString({ free: true })}>Free</Link>
-      <Link to={buildQueryString({ free: false })}>For charge</Link>
-
+      <div className='link-container'>
+      <Link className="link" to={buildQueryString({ free: true })}>
+        Free
+      </Link>
+      <Link className="link" to={buildQueryString({ free: false })}>
+        For charge
+      </Link>
+      </div>
       <button type="submit" onClick={handleReset} className="reset-button">
         Clear Filters
       </button>

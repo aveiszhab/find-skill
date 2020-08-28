@@ -3,31 +3,14 @@ import "../styles/Legend.css";
 
 const Legend = () => {
   return (
-    <div className="legend">
-      <h4>Legend</h4>
+    <div className="legend-container">
       <div>
         <img
           className="icon"
           src="http://labs.google.com/ridefinder/images/mm_20_green.png"
           alt="green"
         />
-        <span>Free / Non-Professional service</span>
-      </div>
-      <div>
-        <img
-          className="icon"
-          src="http://labs.google.com/ridefinder/images/mm_20_yellow.png"
-          alt="yellow"
-        />
-        <span>Free / Professional service</span>
-      </div>
-      <div>
-        <img
-          className="icon"
-          src="http://labs.google.com/ridefinder/images/mm_20_purple.png"
-          alt="purple"
-        />
-        <span>For charge / Professional service</span>
+        <span className='info' >Professional service</span>
       </div>
       <div>
         <img
@@ -35,7 +18,7 @@ const Legend = () => {
           src="http://labs.google.com/ridefinder/images/mm_20_red.png"
           alt="red"
         />
-        <span>For charge / Non-Professional service</span>
+        <span className='info'>Non-Professional service</span>
       </div>
     </div>
   );

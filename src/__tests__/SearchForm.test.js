@@ -28,9 +28,6 @@ describe("SearchForm", () => {
         "label"
       ),
       smallRadioLabel: getByRole("radio", { name: /small/i }).closest("label"),
-      largeCheckMark: getByRole("radio", { name: /large/i }).nextSibling,
-      mediumCheckMark: getByRole("radio", { name: /medium/i }).nextSibling,
-      smallCheckMark: getByRole("radio", { name: /small/i }).nextSibling,
     };
   };
 
@@ -74,17 +71,14 @@ describe("SearchForm", () => {
     expect(renderedComponent.largeRadio).toBeInTheDocument();
     expect(renderedComponent.largeRadioLabel).toHaveTextContent(/large/i);
     expect(renderedComponent.largeRadioLabel).toHaveClass("radio");
-    expect(renderedComponent.largeCheckMark).toHaveClass("checkmark");
 
     expect(renderedComponent.mediumRadioLabel).toHaveTextContent(/medium/i);
     expect(renderedComponent.mediumRadio).toBeInTheDocument();
     expect(renderedComponent.mediumRadioLabel).toHaveClass("radio");
-    expect(renderedComponent.mediumCheckMark).toHaveClass("checkmark");
 
     expect(renderedComponent.smallRadio).toBeInTheDocument();
     expect(renderedComponent.smallRadioLabel).toHaveTextContent(/small/i);
     expect(renderedComponent.smallRadioLabel).toHaveClass("radio");
-    expect(renderedComponent.smallCheckMark).toHaveClass("checkmark");
   });
 
   it("searchform functions", () => {
@@ -94,6 +88,7 @@ describe("SearchForm", () => {
   });
 
   it("radio buttons function", () => {
+    fireEvent.click(renderedComponent.largeRadio);
     expect(renderedComponent.largeRadio).toBeChecked();
     expect(renderedComponent.mediumRadio).not.toBeChecked();
     expect(renderedComponent.smallRadio).not.toBeChecked();

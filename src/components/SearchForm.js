@@ -6,15 +6,17 @@ let autoComplete;
 
 const SearchForm = ({ className, title, onFill, onPick }) => {
   const ref = useRef();
-  const [selectedOption, setSelectedOption] = useState(8);
+  const [selectedOption, setSelectedOption] = useState();
 
   const onValueChange = (e) => {
     setSelectedOption(Number(e.target.value));
   };
 
+  // console.log("sopt", selectedOption);
+
   useEffect(() => {
-    const onScriptLoad = (input) => {
-      autoComplete = new window.google.maps.places.Autocomplete(
+    const onScriptLoad = async (input) => {
+      autoComplete = await new window.google.maps.places.Autocomplete(
         ref.current,
         input
       );
@@ -39,18 +41,17 @@ const SearchForm = ({ className, title, onFill, onPick }) => {
   }, [onFill]);
 
   return (
-    <div>
-      <p className="infotext">Pick a town for nearby services</p>
+    <div className="searchform-container">
+      <h4>Pick your town</h4>
       <input
         ref={ref}
         placeholder="Enter a City"
         title={title}
         className={className}
       />
-      <p className="infotext">Pick the search radius</p>
-      <form className="radius-container" onSubmit={onPick(selectedOption)}>
+      <h4>Pick the search radius</h4>
+      <form className="radius-container" onSubmit={onPick(selectedOption || 8)}>
         <label className="radio" htmlFor="8">
-          Large
           <input
             id="8"
             type="radio"
@@ -58,11 +59,10 @@ const SearchForm = ({ className, title, onFill, onPick }) => {
             checked={selectedOption === 8}
             onChange={onValueChange}
           />
-          <span className="checkmark" />
+          Large
         </label>
 
         <label className="radio" htmlFor="9">
-          Medium
           <input
             id="9"
             type="radio"
@@ -70,11 +70,10 @@ const SearchForm = ({ className, title, onFill, onPick }) => {
             checked={selectedOption === 9}
             onChange={onValueChange}
           />
-          <span className="checkmark" />
+          Medium
         </label>
 
         <label className="radio" htmlFor="12">
-          Small
           <input
             id="12"
             type="radio"
@@ -82,7 +81,7 @@ const SearchForm = ({ className, title, onFill, onPick }) => {
             checked={selectedOption === 12}
             onChange={onValueChange}
           />
-          <span className="checkmark" />
+          Small
         </label>
       </form>
     </div>

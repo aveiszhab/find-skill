@@ -2,22 +2,20 @@
 
 exports[`SearchForm renders correctly to match the SearchForm snapshot 1`] = `
 <DocumentFragment>
-  <div>
-    <p
-      class="infotext"
-    >
-      Pick a town for nearby services
-    </p>
+  <div
+    class="searchform-container"
+  >
+    <h4>
+      Pick your town
+    </h4>
     <input
       class="searchform"
       placeholder="Enter a City"
       title="searchform"
     />
-    <p
-      class="infotext"
-    >
+    <h4>
       Pick the search radius
-    </p>
+    </h4>
     <form
       class="radius-container"
     >
@@ -25,44 +23,34 @@ exports[`SearchForm renders correctly to match the SearchForm snapshot 1`] = `
         class="radio"
         for="8"
       >
-        Large
         <input
-          checked=""
           id="8"
           type="radio"
           value="8"
         />
-        <span
-          class="checkmark"
-        />
+        Large
       </label>
       <label
         class="radio"
         for="9"
       >
-        Medium
         <input
           id="9"
           type="radio"
           value="9"
         />
-        <span
-          class="checkmark"
-        />
+        Medium
       </label>
       <label
         class="radio"
         for="12"
       >
-        Small
         <input
           id="12"
           type="radio"
           value="12"
         />
-        <span
-          class="checkmark"
-        />
+        Small
       </label>
     </form>
   </div>

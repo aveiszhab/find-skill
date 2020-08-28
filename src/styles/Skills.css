@@ -1,53 +1,44 @@
 .skills{
-    width: 100vw;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .map{
-    position: absolute;
     width: 70vw;
     height: 89vh;
+    order: 1;
 }
 
 .sidebar {
-    width: 27.5vw;
+    width: 30vw;
+    order: 2;
     display: flex;
-    position: absolute;
     flex-direction: column;
-    left: 72%;
-    height:89vh;
+    flex-wrap: wrap;
+    justify-content: space-evenly;   
 }
 .skillcard-container {
     border: solid 1px rgb(5, 107, 5);
-    margin: 2px;
-    padding:2px;
-    overflow: scroll;
     align-content: center;
-    height: 36vh;
+    min-height: 36vh;
+    flex-shrink: 0;
 }
-.legend-container {
-    display: flex;
-    border: solid 1px rgb(5, 107, 5);
-    margin: 2px;
-    padding:2px;
-    overflow: scroll;
-}
-.searchform-container {
-    display: flex;
-    border: solid 1px rgb(5, 107, 5);
-    margin: 2px;
-    padding:2px;
-}
-.filterform-container{
-    display: flex;
-    border: solid 1px rgb(5, 107, 5);
-    margin: 2px;
-    padding:2px;
-    background-color: lawngreen;
-}
-.infotext {
-    font-size: 2.5vh;
-    padding-left: 1vw;
-    margin: 0px;
+@media only screen and (max-width: 732px) {
+    .skills{
+       flex-direction: column;
+    }
+    .map{
+        width: 98%;
+        order: 2;
+    }
+    .sidebar {
+     width: 100%;
+     order:1;
+     flex-direction: row;
+    }
+    .skillcard-container {
+        order: 4;
+        width: 99%;
+    }
 }

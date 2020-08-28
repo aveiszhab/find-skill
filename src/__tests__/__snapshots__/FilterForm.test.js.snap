@@ -2,7 +2,9 @@
 
 exports[`FilterForm renders correctly to match the SideBar snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="filterform-container"
+  >
     <h4>
       Search by Skill
     </h4>
@@ -37,16 +39,22 @@ exports[`FilterForm renders correctly to match the SideBar snapshot 1`] = `
         </svg>
       </button>
     </form>
-    <a
-      href="/?free=true"
+    <div
+      class="link-container"
     >
-      Free
-    </a>
-    <a
-      href="/?free=false"
-    >
-      For charge
-    </a>
+      <a
+        class="link"
+        href="/?free=true"
+      >
+        Free
+      </a>
+      <a
+        class="link"
+        href="/?free=false"
+      >
+        For charge
+      </a>
+    </div>
     <button
       class="reset-button"
       type="submit"

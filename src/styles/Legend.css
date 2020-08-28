@@ -1,11 +1,9 @@
-.legend {
+.legend-container {
     display: flex;
     flex-direction: column;
-    font-size: 1.5vh;
-    width: 25vw;
-    padding-left: 1vh
+    border: solid 1px rgb(5, 107, 5);
+    padding:2px;
 }
-
 h4 {
     margin-top: 0vh;
     margin-bottom: 1vh;
@@ -13,4 +11,14 @@ h4 {
 }
 .icon {
     margin: 0px 4px;
+}
+.info {
+    font-size: 12px;
+}
+@media only screen and (max-width: 732px) {
+    .legend-container {
+        width: 98%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 }

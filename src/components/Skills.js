@@ -20,7 +20,6 @@ const Skills = () => {
 
   // Get data from API
   const [skills, setSkills] = useState(initialState.skills);
-  console.log(skills.length);
 
   useEffect(() => {
     listSkills(setSkills);
@@ -37,7 +36,8 @@ const Skills = () => {
   // Google Map
   const [activeMarkerId, setActivemarkerId] = useState();
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
-  const [selectedZoom, setSelectedZoom] = useState(6);
+  const [selectedZoom, setSelectedZoom] = useState();
+  // console.log("szoom", selectedZoom);
   const selectedSkill = skills.find((skill) => skill._id === activeMarkerId);
   const [searchLocation, setSearchLocation] = useState({
     lat: 53.480759,
@@ -60,17 +60,9 @@ const Skills = () => {
         title: skill._id,
       });
 
-      if (skill.free && skill.professional) {
+      if (skill.professional) {
         marker.setIcon(
           "http://labs.google.com/ridefinder/images/mm_20_green.png"
-        );
-      } else if (skill.free && !skill.professional) {
-        marker.setIcon(
-          "http://labs.google.com/ridefinder/images/mm_20_yellow.png"
-        );
-      } else if (!skill.free && skill.professional) {
-        marker.setIcon(
-          "http://labs.google.com/ridefinder/images/mm_20_purple.png"
         );
       } else {
         marker.setIcon(
@@ -126,27 +118,25 @@ const Skills = () => {
         />
       )}
       <div className="sidebar">
-        <div className="searchform-container">
-          {isScriptLoaded && (
-            <SearchForm
-              className="searchform"
-              title="searchform"
-              onFill={handleSearchLocation}
-              onPick={handleSelectedZoom}
-            />
-          )}
-        </div>
-        <div className="filterform-container">
-          <FilterForm />
-        </div>
+        {isScriptLoaded && (
+          <SearchForm
+            className="searchform"
+            title="searchform"
+            onFill={handleSearchLocation}
+            onPick={handleSelectedZoom}
+          />
+        )}
+
+        <FilterForm />
 
         <div className="skillcard-container">
-          <p className="infotext">Click on markers to see the details</p>
+          {!selectedSkill && (
+            <p className="infotext">For details click on markers</p>
+          )}
           {selectedSkill && <SkillCard skill={selectedSkill} />}
         </div>
-        <div className="legend-container">
-          <Legend />
-        </div>
+
+        <Legend />
       </div>
     </div>
   );

@@ -3,39 +3,18 @@
 exports[`Legend to match the Legend snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="legend"
+    class="legend-container"
   >
-    <h4>
-      Legend
-    </h4>
     <div>
       <img
         alt="green"
         class="icon"
         src="http://labs.google.com/ridefinder/images/mm_20_green.png"
       />
-      <span>
-        Free / Non-Professional service
-      </span>
-    </div>
-    <div>
-      <img
-        alt="yellow"
-        class="icon"
-        src="http://labs.google.com/ridefinder/images/mm_20_yellow.png"
-      />
-      <span>
-        Free / Professional service
-      </span>
-    </div>
-    <div>
-      <img
-        alt="purple"
-        class="icon"
-        src="http://labs.google.com/ridefinder/images/mm_20_purple.png"
-      />
-      <span>
-        For charge / Professional service
+      <span
+        class="info"
+      >
+        Professional service
       </span>
     </div>
     <div>
@@ -44,8 +23,10 @@ exports[`Legend to match the Legend snapshot 1`] = `
         class="icon"
         src="http://labs.google.com/ridefinder/images/mm_20_red.png"
       />
-      <span>
-        For charge / Non-Professional service
+      <span
+        class="info"
+      >
+        Non-Professional service
       </span>
     </div>
   </div>

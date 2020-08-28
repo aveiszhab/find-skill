@@ -9,10 +9,7 @@ const SkillCard = ({ skill }) => {
     <div className="skillcard">
       <div className=" skillcard-skill">{skill.skill}</div>
       <div className=" skillcard-description">{skill.description}</div>
-      <div className=" skillcard-name">
-        Name:
-        {skill.name}
-      </div>
+      <div className=" skillcard-name">{`Name: ${skill.name}`}</div>
       <div className=" skillcard-postcode">{skill.postcode}</div>
       <div className=" skillcard-free" data-testid="free">
         {skill.name ? `Free: ${skill.free ? "Yes" : "No"}` : null}

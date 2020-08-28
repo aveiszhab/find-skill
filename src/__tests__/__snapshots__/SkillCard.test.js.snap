@@ -18,7 +18,7 @@ exports[`SkillCard to match the SkillCard snapshot 1`] = `
     <div
       class=" skillcard-name"
     >
-      Name:Test_Name
+      Name: Test_Name
     </div>
     <div
       class=" skillcard-postcode"
