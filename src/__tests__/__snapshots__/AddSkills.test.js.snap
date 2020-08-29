@@ -7,153 +7,127 @@ exports[`AddSkill renders correctly matches the AddSkills snapshot 1`] = `
       class="AddSkill"
     >
       <h3>
-        Add skill
+        Add a skill
       </h3>
-      <form>
-        <div
-          class="add-name"
+      <form
+        class="add-form"
+      >
+        <label
+          class="label"
+          for="name"
         >
-          <label
-            class="label"
-            for="name"
-          >
-            Name:
-            <input
-              class="input"
-              id="name"
-              name="name"
-              placeholder="Add your name"
-              type="text"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="add-skill"
+          Name:
+          <input
+            class="input"
+            id="name"
+            name="name"
+            placeholder="Add your name"
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          class="label"
+          for="skill"
         >
-          <label
-            class="label"
-            for="skill"
-          >
-            Skill:
-            <input
-              class="input"
-              id="skill"
-              name="skill"
-              placeholder="Short desrcription of your skill e.g. 'Fixing Bikes'"
-              type="text"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="add-description"
+          Skill title:
+          <input
+            class="input"
+            id="skill"
+            name="skill"
+            placeholder="Short desrcription of your skill e.g. 'Fixing Bikes'"
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          class="label"
+          for="description"
         >
-          <label
-            class="label"
-            for="description"
-          >
-            Description:
-            <input
-              class="input"
-              id="description"
-              name="description"
-              placeholder="Describe your skills with few sentences"
-              type="text"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="add-postcode"
+          Description:
+          <input
+            class="input"
+            id="description"
+            name="description"
+            placeholder="Describe your skills with few sentences"
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          class="label"
+          for="postcode"
         >
-          <label
-            class="label"
-            for="postcode"
-          >
-            Postcode:
-            <input
-              class="input"
-              id="postcode"
-              name="postcode"
-              placeholder="Add your postcode e.g 'SK17 7DW'"
-              type="text"
-              value=""
-            />
-          </label>
-        </div>
-        <div
-          class="free-select"
+          Postcode:
+          <input
+            class="input"
+            id="postcode"
+            name="postcode"
+            placeholder="Add your postcode e.g 'SK17 7DW'"
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          class="label"
+          for="free"
         >
-          <label
-            class="label"
-            for="free"
+          Free Service:
+          <select
+            class="select"
+            id="free"
+            name="free"
+            title="free"
           >
-            Free Service:
-            <select
-              class="select"
-              id="free"
-              name="free"
-              title="free"
+            <option
+              value="true"
             >
-              <option
-                value="true"
-              >
-                Yes
-              </option>
-              <option
-                value="false"
-              >
-                For fee
-              </option>
-            </select>
-          </label>
-        </div>
-        <div
-          class="professional-select"
-        >
-          <label
-            class="label"
-            for="professional"
-          >
-            Professional service:
-            <select
-              class="select"
-              id="professional"
-              name="professional"
-              title="professional"
+              Yes
+            </option>
+            <option
+              value="false"
             >
-              <option
-                value="true"
-              >
-                Yes
-              </option>
-              <option
-                value="false"
-              >
-                No
-              </option>
-            </select>
-          </label>
-        </div>
-        <div
-          class="add-email"
+              For fee
+            </option>
+          </select>
+        </label>
+        <label
+          class="label"
+          for="professional"
         >
-          <label
-            class="label"
-            for="email"
+          Professional service:
+          <select
+            class="select"
+            id="professional"
+            name="professional"
+            title="professional"
           >
-            Email:
-            <input
-              class="input"
-              id="email"
-              name="email"
-              placeholder="Add your email address"
-              type="text"
-              value=""
-            />
-          </label>
-        </div>
+            <option
+              value="true"
+            >
+              Yes
+            </option>
+            <option
+              value="false"
+            >
+              No
+            </option>
+          </select>
+        </label>
+        <label
+          class="label"
+          for="email"
+        >
+          Email:
+          <input
+            class="input"
+            id="email"
+            name="email"
+            placeholder="Add your email address"
+            type="email"
+            value=""
+          />
+        </label>
         <button
           class="add-button"
           type="submit"

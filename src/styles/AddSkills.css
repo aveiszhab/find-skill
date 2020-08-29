@@ -1,0 +1,50 @@
+.add-form {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding-bottom: 1.25rem;
+  width: 45%;
+}
+h3 {
+  margin-left: 2vh;
+}
+.input, .select {
+    color: rgb(10, 31, 10) ;
+    width: 90%;
+    border: 1px solid  rgb(5, 107, 5);
+    margin: 0.5% 1% 2% 1%;
+    padding: 1%;
+    box-sizing: border-box;
+    font-weight: 600;
+    background-color:ivory;
+    border-radius: 4px;
+}
+.okIcon {
+    color: lawngreen;
+}
+.notOkIcon {
+    color: rgb(121, 4, 4);
+}
+
+.add-button {
+    background-color:ivory;
+    border-radius: 8px;
+    border: 1px solid rgb(9, 32, 2);
+    cursor: pointer;
+    padding: 2% 10%;
+    font-weight: 600;
+    margin-left: 1%;
+    width: 30%;
+  }
+
+.label{
+    padding-left: 1vw;
+}
+
+.add-button:hover {
+    background-color: rgb(19, 246, 27);
+  }
+
+::placeholder {
+    color: rgb(10, 31, 10);
+}

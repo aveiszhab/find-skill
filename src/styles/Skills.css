@@ -24,6 +24,13 @@
     min-height: 36vh;
     flex-shrink: 0;
 }
+.infotext {
+    text-align: center;
+    color: lawngreen;
+    text-shadow: 1px 2px black ;
+    font-size: 25px;
+    padding: 3vw;
+}
 @media only screen and (max-width: 732px) {
     .skills{
        flex-direction: column;

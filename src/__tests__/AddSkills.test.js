@@ -72,7 +72,7 @@ describe("AddSkill", () => {
 
     it("email", () => {
       expect(renderedComponent.email).toHaveClass("input");
-      expect(renderedComponent.email).toHaveAttribute("type", "text");
+      expect(renderedComponent.email).toHaveAttribute("type", "email");
       expect(renderedComponent.email).toHaveAttribute("id", "email");
       expect(renderedComponent.email).toHaveAttribute("name", "email");
     });

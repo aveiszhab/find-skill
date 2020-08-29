@@ -51,13 +51,13 @@ const FilterForm = () => {
           <FontAwesomeIcon icon={faSearch} />
         </button>
       </form>
-      <div className='link-container'>
-      <Link className="link" to={buildQueryString({ free: true })}>
-        Free
-      </Link>
-      <Link className="link" to={buildQueryString({ free: false })}>
-        For charge
-      </Link>
+      <div className="link-container">
+        <Link className="link" to={buildQueryString({ free: true })}>
+          Free
+        </Link>
+        <Link className="link" to={buildQueryString({ free: false })}>
+          For charge
+        </Link>
       </div>
       <button type="submit" onClick={handleReset} className="reset-button">
         Clear Filters

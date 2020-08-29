@@ -131,7 +131,7 @@ const Skills = () => {
 
         <div className="skillcard-container">
           {!selectedSkill && (
-            <p className="infotext">For details click on markers</p>
+            <p className="infotext">For details click on any marker</p>
           )}
           {selectedSkill && <SkillCard skill={selectedSkill} />}
         </div>
