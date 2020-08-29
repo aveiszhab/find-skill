@@ -28,12 +28,14 @@ const SearchForm = ({ className, title, onFill, onPick }) => {
       autoComplete.setFields(["geometry"]);
       autoComplete.addListener("place_changed", () => {
         const place = autoComplete.getPlace();
+        if (place) {
+          const latititude = place.geometry.location.lat();
+          const longitude = place.geometry.location.lng();
+          const latLng = { lat: latititude, lng: longitude };
 
-        const latititude = place.geometry.location.lat();
-        const longitude = place.geometry.location.lng();
-        const latLng = { lat: latititude, lng: longitude };
-
-        onFill(latLng);
+          onFill(latLng);
+        }
+        if (!place) onFill({ lat: 53.480759, lng: -2.242631 });
       });
     };
 
