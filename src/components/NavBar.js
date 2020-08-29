@@ -7,13 +7,13 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <img className="navbar-logo" src={MyLogo} alt="logo" />
-      <h2>FindSkill</h2>
+      <h2>ShareASkill</h2>
       <ul className="navbar-links">
         <li className="navbar-links-item">
           <Link to="/">View Skills</Link>
         </li>
         <li className="navbar-links-item">
-          <Link to="/add-skills">Add a Skill</Link>
+          <Link to="/add-skills">Manage a Skill</Link>
         </li>
       </ul>
     </div>

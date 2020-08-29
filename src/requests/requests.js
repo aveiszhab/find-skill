@@ -8,9 +8,9 @@ const postSkill = (data, setAlert) => {
     url: `${url}/users`,
     data,
   })
-    .then(() =>
+    .then((response) =>
       setAlert({
-        message: "Skill Added",
+        message: `Skill Added. Id is ${response.data._id}. Please make sure you his number, you will need it for changes in details`,
         isSuccess: true,
       })
     )
@@ -44,4 +44,17 @@ const filterSkills = (search, setSkills, setAlert) => {
     );
 };
 
-export { postSkill, listSkills, filterSkills };
+const getSkillById = (id, setAlert) => {
+  return axios({
+    method: "get",
+    url: `${url}/users/:${id}`,
+  })
+    .then((response) => {
+      return response;
+    })
+    .catch((response) => {
+      setAlert({ message: `${response.error}` });
+    });
+};
+
+export { postSkill, listSkills, filterSkills, getSkillById };

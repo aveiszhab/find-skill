@@ -30,7 +30,7 @@ const Skills = () => {
   const [validationErrors, setvalidationErrors] = useState(
     initialState.validationErrors
   );
-
+  // POST skill
   const handleValidation = () => {
     const errors = {};
     let formIsValid = true;
@@ -84,7 +84,7 @@ const Skills = () => {
         <h3>Add a skill</h3>
         <form className="add-form" onSubmit={handleAddSkill}>
           <label className="label" htmlFor="name">
-            Name:
+            Your name:
             <input
               className="input"
               type="text"
@@ -202,7 +202,7 @@ const Skills = () => {
           </label>
 
           <label className="label" htmlFor="email">
-            Email:
+            Contact email address:
             <input
               className="input"
               type="email"

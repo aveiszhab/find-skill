@@ -34,6 +34,7 @@ const FilterForm = () => {
   const handleReset = (event) => {
     event.preventDefault();
     history.push("/");
+    setQuery("");
   };
 
   return (

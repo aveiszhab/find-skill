@@ -17,7 +17,7 @@ describe("NavBar", () => {
         name: /view skill/i,
       }),
       linkToAddSkill: getByRole("link", {
-        name: /add a skill/i,
+        name: /manage a skill/i,
       }),
     };
   };

@@ -16,7 +16,7 @@ exports[`AddSkill renders correctly matches the AddSkills snapshot 1`] = `
           class="label"
           for="name"
         >
-          Name:
+          Your name:
           <input
             class="input"
             id="name"
@@ -118,7 +118,7 @@ exports[`AddSkill renders correctly matches the AddSkills snapshot 1`] = `
           class="label"
           for="email"
         >
-          Email:
+          Contact email address:
           <input
             class="input"
             id="email"

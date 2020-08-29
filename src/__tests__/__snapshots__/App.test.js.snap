@@ -14,7 +14,7 @@ exports[`App renders correctly to match the App snapshot 1`] = `
         src="MyLogo.png"
       />
       <h2>
-        FindSkill
+        ShareASkill
       </h2>
       <ul
         class="navbar-links"
@@ -34,7 +34,7 @@ exports[`App renders correctly to match the App snapshot 1`] = `
           <a
             href="/add-skills"
           >
-            Add a Skill
+            Manage a Skill
           </a>
         </li>
       </ul>

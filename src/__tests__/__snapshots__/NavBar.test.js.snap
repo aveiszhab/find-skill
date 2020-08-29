@@ -11,7 +11,7 @@ exports[`NavBar renders correctly to match the NavBar snapshot 1`] = `
       src="MyLogo.png"
     />
     <h2>
-      FindSkill
+      ShareASkill
     </h2>
     <ul
       class="navbar-links"
@@ -31,7 +31,7 @@ exports[`NavBar renders correctly to match the NavBar snapshot 1`] = `
         <a
           href="/add-skills"
         >
-          Add a Skill
+          Manage a Skill
         </a>
       </li>
     </ul>
