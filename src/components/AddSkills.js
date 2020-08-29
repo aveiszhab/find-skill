@@ -4,9 +4,11 @@ import {
   faCheckCircle,
   faExclamationCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import Alert from "./Alert";
 import { postSkill } from "../requests/requests";
+import Alert from "./Alert";
+
 import "../styles/AddSkills.css";
+import img from "../styles/EppingSpring1.jpg";
 
 const Skills = () => {
   const initialState = {
@@ -80,153 +82,163 @@ const Skills = () => {
   return (
     <div>
       <Alert message={alert.message} success={alert.isSuccess} />
-      <div className="AddSkill">
-        <h3>Add a skill</h3>
-        <form className="add-form" onSubmit={handleAddSkill}>
-          <label className="label" htmlFor="name">
-            Your name:
-            <input
-              className="input"
-              type="text"
-              placeholder="Add your name"
-              id="name"
-              name="name"
-              value={fields.name}
-              onChange={handleFieldChange}
-            />
-            {!validationErrors.name && fields.name && (
-              <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
-            )}
-            {validationErrors.name && (
-              <FontAwesomeIcon
-                className="notOkIcon"
-                icon={faExclamationCircle}
+      <div className="manage-skill">
+        <div className="add-skill">
+          <h2>Add a skill</h2>
+          <form className="add-form" onSubmit={handleAddSkill}>
+            <label className="label" htmlFor="name">
+              Your name:
+              <input
+                className="input"
+                type="text"
+                placeholder="Add your name"
+                id="name"
+                name="name"
+                value={fields.name}
+                onChange={handleFieldChange}
               />
-            )}
-          </label>
+              {!validationErrors.name && fields.name && (
+                <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
+              )}
+              {validationErrors.name && (
+                <FontAwesomeIcon
+                  className="notOkIcon"
+                  icon={faExclamationCircle}
+                />
+              )}
+            </label>
 
-          <label className="label" htmlFor="skill">
-            Skill title:
-            <input
-              className="input"
-              type="text"
-              placeholder="Short desrcription of your skill e.g. 'Fixing Bikes'"
-              id="skill"
-              name="skill"
-              value={fields.skill}
-              onChange={handleFieldChange}
-            />
-            {!validationErrors.skill && fields.skill && (
-              <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
-            )}
-            {validationErrors.skill && (
-              <FontAwesomeIcon
-                className="notOkIcon"
-                icon={faExclamationCircle}
+            <label className="label" htmlFor="skill">
+              Skill title:
+              <input
+                className="input"
+                type="text"
+                placeholder="Short desrcription of your skill e.g. 'Fixing Bikes'"
+                id="skill"
+                name="skill"
+                value={fields.skill}
+                onChange={handleFieldChange}
               />
-            )}
-          </label>
+              {!validationErrors.skill && fields.skill && (
+                <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
+              )}
+              {validationErrors.skill && (
+                <FontAwesomeIcon
+                  className="notOkIcon"
+                  icon={faExclamationCircle}
+                />
+              )}
+            </label>
 
-          <label className="label" htmlFor="description">
-            Description:
-            <input
-              className="input"
-              type="text"
-              placeholder="Describe your skills with few sentences"
-              id="description"
-              name="description"
-              value={fields.description}
-              onChange={handleFieldChange}
-            />
-            {!validationErrors.description && fields.description && (
-              <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
-            )}
-            {validationErrors.description && (
-              <FontAwesomeIcon
-                className="notOkIcon"
-                icon={faExclamationCircle}
+            <label className="label" htmlFor="description">
+              Description:
+              <input
+                className="input"
+                type="text"
+                placeholder="Describe your skills with few sentences"
+                id="description"
+                name="description"
+                value={fields.description}
+                onChange={handleFieldChange}
               />
-            )}
-          </label>
+              {!validationErrors.description && fields.description && (
+                <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
+              )}
+              {validationErrors.description && (
+                <FontAwesomeIcon
+                  className="notOkIcon"
+                  icon={faExclamationCircle}
+                />
+              )}
+            </label>
 
-          <label className="label" htmlFor="postcode">
-            Postcode:
-            <input
-              className="input"
-              type="text"
-              placeholder="Add your postcode e.g 'SK17 7DW'"
-              id="postcode"
-              name="postcode"
-              value={fields.postcode}
-              onChange={handleFieldChange}
-            />
-            {!validationErrors.postcode && fields.postcode && (
-              <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
-            )}
-            {validationErrors.postcode && (
-              <FontAwesomeIcon
-                className="notOkIcon"
-                icon={faExclamationCircle}
+            <label className="label" htmlFor="postcode">
+              Postcode:
+              <input
+                className="input"
+                type="text"
+                placeholder="Add your postcode e.g 'SK17 7DW'"
+                id="postcode"
+                name="postcode"
+                value={fields.postcode}
+                onChange={handleFieldChange}
               />
-            )}
-          </label>
+              {!validationErrors.postcode && fields.postcode && (
+                <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
+              )}
+              {validationErrors.postcode && (
+                <FontAwesomeIcon
+                  className="notOkIcon"
+                  icon={faExclamationCircle}
+                />
+              )}
+            </label>
 
-          <label className="label" htmlFor="free">
-            Free Service:
-            <select
-              title="free"
-              className="select"
-              id="free"
-              name="free"
-              value={fields.free}
-              onChange={handleFieldChange}
-            >
-              <option value="true">Yes</option>
-              <option value="false">For fee</option>
-            </select>
-          </label>
+            <label className="label" htmlFor="free">
+              Free Service:
+              <select
+                title="free"
+                className="select"
+                id="free"
+                name="free"
+                value={fields.free}
+                onChange={handleFieldChange}
+              >
+                <option value="true">Yes</option>
+                <option value="false">For fee</option>
+              </select>
+            </label>
 
-          <label className="label" htmlFor="professional">
-            Professional service:
-            <select
-              title="professional"
-              className="select"
-              id="professional"
-              name="professional"
-              value={fields.professional}
-              onChange={handleFieldChange}
-            >
-              <option value="true">Yes</option>
-              <option value="false">No</option>
-            </select>
-          </label>
+            <label className="label" htmlFor="professional">
+              Professional service:
+              <select
+                title="professional"
+                className="select"
+                id="professional"
+                name="professional"
+                value={fields.professional}
+                onChange={handleFieldChange}
+              >
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+              </select>
+            </label>
 
-          <label className="label" htmlFor="email">
-            Contact email address:
-            <input
-              className="input"
-              type="email"
-              placeholder="Add your email address"
-              id="email"
-              name="email"
-              value={fields.email}
-              onChange={handleFieldChange}
-            />
-            {!validationErrors.email && fields.email && (
-              <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
-            )}
-            {validationErrors.email && (
-              <FontAwesomeIcon
-                className="notOkIcon"
-                icon={faExclamationCircle}
+            <label className="label" htmlFor="email">
+              Contact email address:
+              <input
+                className="input"
+                type="email"
+                placeholder="Add your email address"
+                id="email"
+                name="email"
+                value={fields.email}
+                onChange={handleFieldChange}
               />
-            )}
-          </label>
+              {!validationErrors.email && fields.email && (
+                <FontAwesomeIcon className="okIcon" icon={faCheckCircle} />
+              )}
+              {validationErrors.email && (
+                <FontAwesomeIcon
+                  className="notOkIcon"
+                  icon={faExclamationCircle}
+                />
+              )}
+            </label>
 
-          <button className="add-button" type="submit">
-            Add
-          </button>
-        </form>
+            <button className="add-button" type="submit">
+              Add
+            </button>
+          </form>
+        </div>
+        <div className="change-skill">
+          <img className="img" src={img} alt="Pic" />
+          <h2>
+            Add your details and simply press the add button. Please make sure
+            that you use the required format when it comes to adding postcode
+            and email address.
+          </h2>
+        </div>
       </div>
     </div>
   );

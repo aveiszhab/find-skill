@@ -4,137 +4,153 @@ exports[`AddSkill renders correctly matches the AddSkills snapshot 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="AddSkill"
+      class="manage-skill"
     >
-      <h3>
-        Add a skill
-      </h3>
-      <form
-        class="add-form"
+      <div
+        class="add-skill"
       >
-        <label
-          class="label"
-          for="name"
+        <h2>
+          Add a skill
+        </h2>
+        <form
+          class="add-form"
         >
-          Your name:
-          <input
-            class="input"
-            id="name"
-            name="name"
-            placeholder="Add your name"
-            type="text"
-            value=""
-          />
-        </label>
-        <label
-          class="label"
-          for="skill"
-        >
-          Skill title:
-          <input
-            class="input"
-            id="skill"
-            name="skill"
-            placeholder="Short desrcription of your skill e.g. 'Fixing Bikes'"
-            type="text"
-            value=""
-          />
-        </label>
-        <label
-          class="label"
-          for="description"
-        >
-          Description:
-          <input
-            class="input"
-            id="description"
-            name="description"
-            placeholder="Describe your skills with few sentences"
-            type="text"
-            value=""
-          />
-        </label>
-        <label
-          class="label"
-          for="postcode"
-        >
-          Postcode:
-          <input
-            class="input"
-            id="postcode"
-            name="postcode"
-            placeholder="Add your postcode e.g 'SK17 7DW'"
-            type="text"
-            value=""
-          />
-        </label>
-        <label
-          class="label"
-          for="free"
-        >
-          Free Service:
-          <select
-            class="select"
-            id="free"
-            name="free"
-            title="free"
+          <label
+            class="label"
+            for="name"
           >
-            <option
-              value="true"
-            >
-              Yes
-            </option>
-            <option
-              value="false"
-            >
-              For fee
-            </option>
-          </select>
-        </label>
-        <label
-          class="label"
-          for="professional"
-        >
-          Professional service:
-          <select
-            class="select"
-            id="professional"
-            name="professional"
-            title="professional"
+            Your name:
+            <input
+              class="input"
+              id="name"
+              name="name"
+              placeholder="Add your name"
+              type="text"
+              value=""
+            />
+          </label>
+          <label
+            class="label"
+            for="skill"
           >
-            <option
-              value="true"
+            Skill title:
+            <input
+              class="input"
+              id="skill"
+              name="skill"
+              placeholder="Short desrcription of your skill e.g. 'Fixing Bikes'"
+              type="text"
+              value=""
+            />
+          </label>
+          <label
+            class="label"
+            for="description"
+          >
+            Description:
+            <input
+              class="input"
+              id="description"
+              name="description"
+              placeholder="Describe your skills with few sentences"
+              type="text"
+              value=""
+            />
+          </label>
+          <label
+            class="label"
+            for="postcode"
+          >
+            Postcode:
+            <input
+              class="input"
+              id="postcode"
+              name="postcode"
+              placeholder="Add your postcode e.g 'SK17 7DW'"
+              type="text"
+              value=""
+            />
+          </label>
+          <label
+            class="label"
+            for="free"
+          >
+            Free Service:
+            <select
+              class="select"
+              id="free"
+              name="free"
+              title="free"
             >
-              Yes
-            </option>
-            <option
-              value="false"
+              <option
+                value="true"
+              >
+                Yes
+              </option>
+              <option
+                value="false"
+              >
+                For fee
+              </option>
+            </select>
+          </label>
+          <label
+            class="label"
+            for="professional"
+          >
+            Professional service:
+            <select
+              class="select"
+              id="professional"
+              name="professional"
+              title="professional"
             >
-              No
-            </option>
-          </select>
-        </label>
-        <label
-          class="label"
-          for="email"
-        >
-          Contact email address:
-          <input
-            class="input"
-            id="email"
-            name="email"
-            placeholder="Add your email address"
-            type="email"
-            value=""
-          />
-        </label>
-        <button
-          class="add-button"
-          type="submit"
-        >
-          Add
-        </button>
-      </form>
+              <option
+                value="true"
+              >
+                Yes
+              </option>
+              <option
+                value="false"
+              >
+                No
+              </option>
+            </select>
+          </label>
+          <label
+            class="label"
+            for="email"
+          >
+            Contact email address:
+            <input
+              class="input"
+              id="email"
+              name="email"
+              placeholder="Add your email address"
+              type="email"
+              value=""
+            />
+          </label>
+          <button
+            class="add-button"
+            type="submit"
+          >
+            Add
+          </button>
+        </form>
+      </div>
+      <div
+        class="change-skill"
+      >
+        <img
+          alt="Pic"
+          class="img"
+          src="EppingSpring1.jpg"
+        />
+        <h2>
+          Add your details and simply press the add button. Please make sure that you use the required format when it comes to adding postcode and email address.
+        </h2>
+      </div>
     </div>
   </div>
 </DocumentFragment>
