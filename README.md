@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ShareASkill app
+Manchester Codes Software Engineer FastTrack course – Final project
 
-## Available Scripts
+This Google Map based app enables people to share their skills and other people in need for services to list, and filter those skills. The skills are stored in MongoDB Atlas global cloud database service which is connected to the app through an API https://github.com/aveiszhab/find-skill.api.
 
-In the project directory, you can run:
+The introduction video is available on Youtube https://www.youtube.com/watch?v=LpAOsyFB2bA.
 
-### `npm start`
+# Deployment
+The app was deployed on GitHub pages: https://aveiszhab.github.io/find-skill/#/
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Screenshots
+## Mobile
+![Mobile screenshot](./src/Mobile.PNG)   
+## Desktop
+![Desktop screenshot](./src/Desktop.png)  
+# Development utilities used:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* The App was built using REACT
+* Testing: Jest, React Testing Library
+* Packages: Axios, PropTypes, qs
 
-### `npm test`
+# How to use the app
+## If you have a skill to share
+* Click on "Manage a Skill" on the navigaton bar
+* Fill the form and click on the "Add" button
+* If it was successful. You should be able to see a green confirmation message on the top of the screen
+* Click on "View Skills" on the navigation bar and you should be able to find your marker on the map (for details see the next section)
+## If you are looking for a service
+* Click on "View Skills" on the navigation bar
+* Start typing the name of your city into the searchbox in the top right corner and pick from the list. That step will center the map to your area.
+* Change the search radius with the radio buttons below the searchbox (you can use the normal scrolling features of Google map to)
+* For filtering the skills in your area you can serch by the name of the service. Simply type it in into the second searchbox e.g.: sing
+* Yo can filter the matches by free and chargeable too.
+* Click on a Marker so details will be shown in the middle window on the right side
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# To run the App locally
+* Clone the repo:
+git@github.com:aveiszhab/find-skill.git
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Install the project dependencies with npm i
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Based on the .env.example create a .env files on the route of your project.
+    * GOOGLE_MAP_API_KEY: replace \<Your Google API key> with the key you created on Google cloud patform. Make sure that  Maps JavaScript API and Places API enabled. https://developers.google.com/maps/documentation/javascript/get-api-key
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* For testing run:
 
-### `npm run eject`
+        npm test
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Start the server:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        npm start 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Possible improvements:
+* Adding login options so the users can manage their own skillcards
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Author:
+Aniko Veiszhab
